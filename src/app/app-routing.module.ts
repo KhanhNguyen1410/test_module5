@@ -3,6 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 import {ListComponent} from './component/list/list.component';
 import {DeleteComponent} from './component/delete/delete.component';
 import {CreateComponent} from './component/create/create.component';
+import {DetailsComponent} from './component/details/details.component';
+import {UpdateComponent} from './component/update/update.component';
 
 const routes: Routes = [
   {
@@ -16,6 +18,14 @@ const routes: Routes = [
   {
     path: 'delete/:id',
     component: DeleteComponent
+  },
+  {
+    path: 'details/:id',
+    component: DetailsComponent
+  },
+  {
+    path: 'edit/:id',
+    component: UpdateComponent
   }
 ];
 

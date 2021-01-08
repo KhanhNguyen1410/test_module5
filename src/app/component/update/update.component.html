@@ -1,1 +1,18 @@
-<p>update works!</p>
+
+<div class="container-xl" align="center">
+  <h2>Edit</h2>
+  <form class="user" [formGroup]="bookForm" (ngSubmit)="updateBook()">
+    <div class="form-group row">
+      <div class="col-sm-6 mb-3 mb-sm-0">
+        <input type="text"  formControlName="title" class="form-control form-control-user">
+      </div>
+      <div class="col-sm-6">
+        <input type="text" formControlName="author" class="form-control form-control-user">
+      </div>
+      <div class="col-sm-6">
+        <textarea type="text" formControlName="description" class="form-control form-control-user"></textarea>
+      </div>
+    </div>
+    <button type="submit" class="btn-success">update</button>
+  </form>
+</div>
