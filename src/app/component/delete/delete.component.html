@@ -1,6 +1,17 @@
-
+<div class="col-md-6 offset-md-3">
   <h3>Are you sure?</h3>
+  <dl class="row">
+    <dt class="col-sm-3">Tên sách</dt>
+    <dd class="col-sm-9">{{book.title}}</dd>
+
+    <dt class="col-sm-3">Tác giả</dt>
+    <dd class="col-sm-9">
+      <p>{{book.author}}</p>
+    </dd>
+    <dt class="col-sm-3">Mô tả</dt>
+    <dd class="col-sm-9">{{book.description}}</dd>
+  </dl>
   <button class="btn-success" (click)="deleteBook()">Yes</button>
-  <br>
-  <a [routerLink]="'/'" class="btn-primary">Back</a>
+  <button [routerLink]="'/'" class="btn-primary">Back</button>
+</div>
 
