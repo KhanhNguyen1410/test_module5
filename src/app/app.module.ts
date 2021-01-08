@@ -10,6 +10,7 @@ import { CreateComponent } from './component/create/create.component';
 import { UpdateComponent } from './component/update/update.component';
 import { DeleteComponent } from './component/delete/delete.component';
 import { DetailsComponent } from './component/details/details.component';
+import { NavComponent } from './nav/nav.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { DetailsComponent } from './component/details/details.component';
     CreateComponent,
     UpdateComponent,
     DeleteComponent,
-    DetailsComponent
+    DetailsComponent,
+    NavComponent
   ],
   imports: [
     BrowserModule,

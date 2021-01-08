@@ -1,18 +1,24 @@
-
-<div class="container-xl" align="center">
-  <h2>Edit</h2>
-  <form class="user" [formGroup]="bookForm" (ngSubmit)="updateBook()">
-    <div class="form-group row">
-      <div class="col-sm-6 mb-3 mb-sm-0">
-        <input type="text"  formControlName="title" class="form-control form-control-user">
+<div class="container-fluid">
+  <h1 align="center">Cập nhật sách</h1>
+  <div class="col-md-6 offset-md-3">
+    <form [formGroup]="bookForm" (ngSubmit)="updateBook()" >
+      <div class="form-group">
+        <label>Tên</label>
+        <input type="text" formControlName="title" class="form-control" value="{{book.title}}">
       </div>
-      <div class="col-sm-6">
-        <input type="text" formControlName="author" class="form-control form-control-user">
+      <div class="form-group">
+        <label>Tác giả</label>
+        <input type="email" formControlName="author" class="form-control" value="{{book.author}}">
       </div>
-      <div class="col-sm-6">
-        <textarea type="text" formControlName="description" class="form-control form-control-user"></textarea>
+      <div class="form-group">
+        <label>Mô tả</label>
+        <textarea type="text"  formControlName="description" class="form-control"  value="{{book.description}}"></textarea>
       </div>
-    </div>
-    <button type="submit" class="btn-success">update</button>
-  </form>
+      <div>
+        <center>
+        <button type="submit" class="btn btn-primary">Cập nhật</button>
+        <button class="btn btn-success" routerLink='/'>List</button></center>
+      </div>
+    </form>
+  </div>
 </div>

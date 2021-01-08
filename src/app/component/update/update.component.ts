@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {IBook} from '../../model/ibook';
 import {FormBuilder, FormGroup} from '@angular/forms';
 import {BookService} from '../../service/book.service';
-import {ActivatedRoute, Router} from '@angular/router';
+import {ActivatedRoute, ParamMap, Router} from '@angular/router';
 
 @Component({
   selector: 'app-update',
@@ -26,15 +26,23 @@ export class UpdateComponent implements OnInit {
   ngOnInit(): void {
     this.bookForm = this.formBuilder.group(
       {
-        title: [null],
-        author: [null],
-        description: [null]
+        title: [''],
+        author: [''],
+        description: ['']
       }
     );
+    this.activatedRoute.paramMap.subscribe((param: ParamMap) => {
+      // @ts-ignore
+      this.id = param.get('id');
+      this.bookService.getBook(this.id).subscribe(result => {
+        this.book = result;
+        this.bookForm.patchValue(this.book);
+      });
+    });
   }
   // tslint:disable-next-line:typedef
   updateBook() {
-    if (this.bookForm.invalid) {
+    if (!this.bookForm.invalid) {
       const  {value} = this.bookForm;
       const  data = {
         ...this.book,
