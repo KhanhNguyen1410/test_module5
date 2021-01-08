@@ -1,0 +1,31 @@
+
+<div class="col-md-6 offset-md-3">
+  <div class="card-header py-3">
+    <h6 class="m-0 font-weight-bold text-primary">Danh sach sach</h6>
+  </div>
+  <div class="card-body">
+    <div class="table-responsive">
+      <p style="float: left">So luong sach: {{books.length}}</p>
+      <a [routerLink]="'/create'" style="float: right" class="btn-success">Tao moi sach</a>
+      <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+        <thead>
+        <tr>
+          <th>#</th>
+          <th>Ten sach</th>
+          <th>author</th>
+          <th>Edit</th>
+          <th>Delete</th>
+        </tr>
+        </thead>
+        <tfoot>
+        <tr *ngFor="let book of books">
+          <td>{{book.id}}</td>
+          <td><a [routerLink]="['/details',book.id]">{{book.title}}</a></td>
+          <td>{{book.author}}</td>
+          <td><button class="btn-success" [routerLink]="['/edit', book.id]">edit</button></td>
+          <td><button class="btn-primary" [routerLink]="['/delete', book.id]">delete</button></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
